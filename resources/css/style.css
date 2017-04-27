@@ -1,6 +1,7 @@
 /* COLOR PALETTE
 
 light gray: #d8d8d8
+mid gray (mobile only): #9b9b9b
 dark gray (text + button): #4a4a4a
 */
 
@@ -20,8 +21,33 @@ h1, h2, h3, .bold-type {
   color: #4a4a4a;
 }
 
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h3, p {
+  line-height: 1.75rem;
+}
+
+a {
+  text-decoration: none;
+}
+
 body {
   margin: 0 auto;
+  max-width: 1183px;
+}
+
+.banner-container, .main-info, footer {
+  padding: 2rem 1.5rem;
 }
 
 /* Header */
@@ -29,7 +55,6 @@ body {
 header {
   position: fixed;
   width: 100%;
-  border-bottom: solid 1px #c6c1c1;
   background-color: white;
   z-index: 100;
 }
@@ -39,6 +64,7 @@ header .container {
   align-items: center;
   justify-content: space-between;
   padding: .5rem 1.5rem;
+  max-width: 1145px;
 }
 
 header img {
@@ -63,7 +89,6 @@ nav li {
 nav a {
   font-size: 1rem;
   color: #4a4a4a;
-  text-decoration: none;
 }
 
 /*header .icon {
@@ -80,10 +105,19 @@ header .mobile {
   display: none;
 }
 
+@media only screen and (max-width: 1024px) {
+  header .container {
+    /*padding: .5rem;
+    justify-content: center;*/
+    max-width: 1024px;
+  }
+}
+
 @media only screen and (max-width: 760px) {
 /*  header .container {
     padding: .5rem;
     justify-content: center;
+    max-width: 1200px;
   }*/
 
   header nav.desktop {
@@ -119,27 +153,31 @@ header .mobile {
 .main-content {
   position: relative;
   top: 4rem;
+  border: 1px #9b9b9b solid;
 }
 
 .banner-container {
   display: flex;
-  padding: 2rem 1.5rem;
-  background: #d8d8d8;
+  /*padding: 2rem 1.5rem;*/
+  background-color: #d8d8d8;
+  align-items: center;
 }
 
 .banner-image {
   width: 60%;
-  padding-right: 2.5rem;
 }
 
-.banner-image img {
+.banner-image img, .main-info img  {
   max-width: 100%;
 }
 
 .start-container {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+  /*flex-wrap: wrap;
+  flex-direction: column;*/
+  flex-flow: column;
+  padding: 0 2.5rem;
+  width: 22rem;
 }
 
 .start-container .button {
@@ -147,5 +185,90 @@ header .mobile {
   color: white;
   text-align: center;
   padding: 1rem;
-  width: 20rem;
+  width: 90%;
+}
+
+@media only screen and (max-width: 760px) {
+  .banner-container {
+    flex-flow: column;
+    padding: 0 0 2rem 0;
+  }
+  .banner-image {
+    width: 100%;
+    height: 11.25rem;
+    background-color: #9b9b9b;
+  }
+  .banner-image img {
+    display: none;
+  }
+  .start-container h1 {
+    margin-bottom: 2rem;
+  }
+  .start-container h3 {
+    margin-bottom: 1.5rem;
+  }
+  .start-container .button {
+    background-color: #9b9b9b;
+  }
+}
+
+/* School Information*/
+
+.info-container {
+  display: flex;
+}
+
+.main-info {
+  width: 60%;
+}
+
+p.student {
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.main-info h2 {
+  margin: 2rem 0 1.5rem 0;
+}
+
+.info-bar {
+  padding-top: 2rem;
+  display: flex;
+  flex-flow: column;
+  width: 26.43rem;
+  border-left: 1px #d8d8d8 solid;
+}
+
+.orientation, .campus, .lecture {
+  display: flex;
+  padding: 1rem 0 1rem 1rem;
+  border-bottom: 1px #d8d8d8 solid;
+}
+
+.orientation {
+  padding-top: 0;
+}
+
+.callout {
+  background-color: #d8d8d8;
+}
+.square {
+  width: 35%;
+}
+
+.square img {
+  max-width: 100%;
+}
+
+.info-bar div {
+  padding-left: 1rem;
+}
+
+
+/*Footer */
+
+footer {
+  border-top: 1px #9b9b9b solid;
+  padding-top: 1rem;
+  font-size: 0.75rem;
 }

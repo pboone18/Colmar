@@ -48,6 +48,18 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: #990303;
+}
+
+a:active {
+  color: #620399;
+}
+
+a:visited {
+  color: #620399;
+}
+
 body {
   margin: 0 auto;
   max-width: 1224px;
@@ -66,12 +78,12 @@ header {
   z-index: 100;
 }
 
-header .container {
+.container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: .5rem 1.5rem;
-  max-width: 1145px;
+  max-width: 1224px;
 }
 
 header img {
@@ -84,7 +96,7 @@ header span {
   font-size: 1.25rem;
 }
 
-header nav ul {
+header nav ul, footer nav ul {
   display: flex;
   list-style: none;
 }
@@ -97,11 +109,6 @@ nav a {
   font-size: 1rem;
   color: #4a4a4a;
 }
-
-/*header .icon {
-  width: 1rem;
-  padding-left: .75rem;
-}*/
 
 header .desktop {
   display: flex;
@@ -343,7 +350,7 @@ header .mobile {
 }
 
 .course-container h2 {
-  margin: 2rem 0;
+  padding: 2rem 0;
   text-align: center;
 }
 
@@ -391,10 +398,110 @@ header .mobile {
     color: #4a4a4a;
   }
 }
+
+/*Thesis Section*/
+
+.thesis-container {
+  background-color: #f3f5f5;
+}
+
+.thesis-container h2 {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.thesis-info {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0;
+  padding-bottom: 0;
+  align-content: flex-start;
+}
+
+.video-info {
+  /*padding: 2rem 0;*/
+  width: 60%;
+  /*margin-right: 1.5rem;*/
+  /*testing - also remove padding*/
+  margin: 0 1.5rem 1.5rem 1.5rem;
+}
+
+video {
+  max-width: 100%
+}
+
+.video-info h3 {
+  margin: 1.5rem 0;
+}
+
+.thesis-bar {
+  display: flex;
+  flex-flow: column;
+  width: 26.5rem;
+  border-left: 1px transparent solid;
+/*  margin-left: .25rem;  test by turning off margin-left*/
+}
+
+.showcase, .research {
+  display: flex;
+  padding: 1rem 0 1rem 1rem;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.callout {
+  background-color: #d8d8d8;
+}
+
+.square {
+  width: 35%;
+}
+
+.mobile {
+  display: none;
+}
+
+.thesis-bar .stories {
+  padding-left: 1rem;
+}
+
+@media only screen and (max-width: 560px) {
+  .thesis-container {
+    flex-flow: column;
+    margin: 0;
+  }
+  .thesis-bar, .video-info h3, .video-info p {
+    display: none;
+  }
+  .video-info {
+    width: 100%;
+  }
+}
+
+
 /*Footer */
 
 footer {
   border-top: 1px #9b9b9b solid;
   padding-top: 1rem;
   font-size: 0.75rem;
+}
+
+footer .container {
+  padding: .5rem 1.5rem 2rem 0;
+}
+
+footer span, footer nav a {
+  font-size: .85rem;
+  color: #4a4a4a;
+}
+
+footer nav li {
+  padding-left: 0.5rem;
+}
+
+@media only screen and (max-width: 560px) {
+  footer nav {
+    display: none;
+  }
 }
